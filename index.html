@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> JavaScript ATM problem solution </title>
+</head>
+<body>
+        <h1> ATM </h1>
+
+        <p id="withdrawAmount"> </p>
+        <p id="accountBalance"> </p>
+        <p id="lessAccountBalance"> </p>
+        <p id="notValidAmount"> </p>
+        
+        <hr>
+
+        <button onclick="document.getElementById('checkBalance').innerHTML = 'Name : ' + accountName + '<br>' + ' your saving\'s account balance is' + ' ' + accountBalance">
+                Check Balance
+        </button>
+        <p id="checkBalance"></p>
+
+        <hr>
+
+        <button onclick="document.getElementById('lastTransaction').innerHTML = 'Name : ' + accountName + '<br>' + ' your last transaction amount is ' + ' ' + withdrawAmount + ' $US' ">
+                Last transaction
+        </button>
+        <p id="lastTransaction"></p> <hr>
+
+        <script>
+                let accountName = 'Pooja';
+                let withdrawAmount = 0;
+                withdrawAmount = window.prompt( accountName + " " + "please enter the $US that you want to withdraw");
+                let accountBalance = 2000;
+
+                if( withdrawAmount == "" || withdrawAmount == 0){
+                        document.getElementById('notValidAmount').innerHTML = accountName + " " + "Please enter valid amount";
+                }
+                else{
+
+                        if( withdrawAmount > 0 && withdrawAmount < 2000 ){
+
+                                if( (withdrawAmount % 5) == 0){
+
+                                        let bankCharges = 0.50;
+                                        accountBalance = accountBalance - withdrawAmount - bankCharges;
+                                        accountBalance = accountBalance.toFixed(2);
+                                        document.getElementById('accountBalance').innerHTML = "Avaliable Balance : " + accountBalance + ' $US';
+                                } 
+                                else{
+                                        document.getElementById('withdrawAmount').innerHTML = "Please enter the withdraw amount in multiples of 5 $US " ;
+                                }
+                        }
+                        else{
+                                document.getElementById('lessAccountBalance').innerHTML = " You don't have sufficent Balance to withdraw amount";
+                        }
+                }
+
+0
+        </script>
+</body>
+</html>
