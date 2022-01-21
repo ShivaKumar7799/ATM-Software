@@ -1,0 +1,69 @@
+body{
+        background-color:  #3434EE;
+        color: white;
+        margin:  0% 10%;
+}
+.heading img{
+        width: 100px;
+        height: 100px;
+}
+.heading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+}
+.bankDetails{
+        text-align: center;
+}
+
+.bankDetails h1{
+        font-size: 40px;
+}
+
+.bankDetails h3{
+        font-size: 30px;
+}
+
+#notValidAmount{
+        text-align: center;
+        font-size: 25px;
+        background-color: salmon;
+        padding: 20px;
+}
+
+button{
+        background-color:rgb(247,245,20) ;
+        width : 200px;
+        font-size: 20px;
+        font-weight: 700;
+        color: rgb(126,117,5);
+        height: 50px;
+        padding: 10px;
+}
+
+.checkBalance{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+}
+
+.checkBalance p{
+        font-size: 20px;
+}
+
+.lastTransaction p{
+        font-size: 20px;
+
+}
+
+#checkBalance, #lastTransaction{
+        width: 400px;
+        text-align: left;
+        background-color: whitesmoke;
+        color: blue;
+        font-size: 20px;
+        padding: 0px 10px; 
+        font-weight: 600;
+}
