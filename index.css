@@ -68,7 +68,7 @@ button{
         font-weight: 600;
 }
 
-@media screen and (min-width: 200px), (min-width: 400px) {
+@media screen and (min-width: 200px), (min-width: 375px) {
         body{
                 font-size: 10px;
                 margin: 5px;
@@ -76,6 +76,12 @@ button{
         .checkBalance{
                 flex-wrap: wrap;
                 flex-direction: column;
+        }
+        .checkBalance p{
+                width: fit-content;
+        }
+        #notValidAmount{
+                width: fit-content;
         }
 }
 
