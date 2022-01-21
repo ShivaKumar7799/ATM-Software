@@ -67,3 +67,24 @@ button{
         padding: 0px 10px; 
         font-weight: 600;
 }
+
+@media screen and (min-width: 400px) {
+        body{
+                font-size: 10px;
+                margin: 5px;
+        }
+        .checkBalance{
+                flex-wrap: wrap;
+        }
+}
+
+@media screen and (min-width:600px) {
+        body{
+                font-size: 10px;
+                margin: 5px;
+        }
+        .checkBalance{
+                flex-wrap: wrap;
+                flex-direction: column;
+        }
+}
