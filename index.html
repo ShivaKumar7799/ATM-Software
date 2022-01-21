@@ -16,25 +16,31 @@
         
         <hr>
 
-        <button onclick="document.getElementById('checkBalance').innerHTML = 'Name : ' + accountName + '<br>' + ' your saving\'s account balance is' + ' ' + accountBalance">
+        <button onclick="document.getElementById('checkBalance').innerHTML =
+         'Name : ' + accountName + '<br>' + ' your saving\'s account balance is' + ' ' + balance + ' $US' " >
                 Check Balance
         </button>
         <p id="checkBalance"></p>
 
         <hr>
 
-        <button onclick="document.getElementById('lastTransaction').innerHTML = 'Name : ' + accountName + '<br>' + ' your last transaction amount is ' + ' ' + withdrawAmount + ' $US' ">
+        <button onclick="document.getElementById('lastTransaction').innerHTML = 
+        'Name : ' + accountName + '<br>' + ' your last transaction amount is ' + ' ' + lastTransaction + ' $US' ">
                 Last transaction
         </button>
         <p id="lastTransaction"></p> <hr>
 
         <script>
                 let accountName = 'Pooja';
-                let withdrawAmount = 0;
-                withdrawAmount = window.prompt( accountName + " " + "please enter the $US that you want to withdraw");
-                let accountBalance = 2000;
+                let withdrawAmount ;
+                withdrawAmount = 0 + window.prompt( accountName + " " + "please enter the $US that you want to withdraw");
+                var accountBalance = 2000;
+                withdrawAmount = Number.parseInt(withdrawAmount);
 
-                if( withdrawAmount == "" || withdrawAmount == 0){
+                console.log( typeof withdrawAmount);
+
+
+                if( withdrawAmount == "" || withdrawAmount <= 0 || typeof(withdrawAmount) == "string"){
                         document.getElementById('notValidAmount').innerHTML = accountName + " " + "Please enter valid amount";
                 }
                 else{
@@ -44,9 +50,10 @@
                                 if( (withdrawAmount % 5) == 0){
 
                                         let bankCharges = 0.50;
-                                        accountBalance = accountBalance - withdrawAmount - bankCharges;
-                                        accountBalance = accountBalance.toFixed(2);
-                                        document.getElementById('accountBalance').innerHTML = "Avaliable Balance : " + accountBalance + ' $US';
+                                        var balance = accountBalance - withdrawAmount - bankCharges;
+                                        balance = balance.toFixed(2);
+                                        document.getElementById('accountBalance').innerHTML = "Avaliable Balance : " + balance + ' $US';
+                                        var lastTransaction = accountBalance - balance - bankCharges;
                                 } 
                                 else{
                                         document.getElementById('withdrawAmount').innerHTML = "Please enter the withdraw amount in multiples of 5 $US " ;
@@ -56,8 +63,10 @@
                                 document.getElementById('lessAccountBalance').innerHTML = " You don't have sufficent Balance to withdraw amount";
                         }
                 }
-
-0
+        if(balance == undefined || lastTransaction == undefined){
+                balance = accountBalance;
+                lastTransaction = 0;
+        }
         </script>
 </body>
 </html>
